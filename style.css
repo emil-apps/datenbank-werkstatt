@@ -1,0 +1,263 @@
+html { margin: 0 }
+img {-webkit-user-drag: none;}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: "Arial", sans-serif;
+    transition: 0;
+    overflow: hidden;
+    user-select: none;
+}
+
+#settings-container{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2;
+}
+#settings-container.hidden{
+    display: none;
+}
+
+#settings-container .content{
+    background-color: white;
+    color: black;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    font-size: x-large;
+
+    transform: translate(-50%, -50%);
+    
+    width: 30%;
+    padding: 24px;
+}
+
+#settings-container .content select{
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-family: inherit;
+    font-size: x-large;
+    cursor: pointer;
+    width: 35%;
+}
+
+#settings-container .content select:hover{
+    background-color: lightgray;
+}
+
+#settings-container .content a,
+#settings-container .content a:visited{
+    color: dodgerblue;
+    text-decoration: none;
+    border-bottom: 2px dotted dodgerblue;
+}
+
+#settings-container .content button{
+    outline: none;
+    border: 1px solid transparent;
+    background-color: dodgerblue;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 6px;
+    padding-left: 24px;
+    padding-right: 24px;
+    cursor: pointer;
+}
+
+#settings-container .content button:hover{
+    background-color: #176fc6;
+}
+
+.bar{
+    z-index: 1;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bar #einstellungen-btn{
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.bar #hauptmenu-btn{
+    position: fixed;
+    right: 96px;
+    bottom: 12px;
+    cursor: pointer;
+
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.bar #hauptmenu-btn.hidden{
+    opacity: 0;
+    pointer-events: none;
+    bottom: -20px;
+}
+
+.bar #einstellungen-btn:hover{
+    transform: rotate(-180deg);
+}
+
+.bar #name{
+    font-size: x-large;
+}
+
+#menu{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+}
+#menu.hidden{
+    display: none;
+}
+
+#menu h1{
+    font-weight: normal;
+    font-size: 400%;
+    text-align: center;
+}
+
+#menu .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#menu .container .menu-btn{
+    border: 3px solid transparent;
+    background-color:darkviolet;
+    font-family: inherit;
+    font-size: x-large;
+    color: white;
+
+    width: 350px;
+    height: 170px;
+    text-align: left;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+}
+
+#menu .container .menu-btn img{
+    width: 100px;
+}
+
+#menu .container .menu-btn:hover{
+    border-color: white;
+}
+
+.panel{
+    position: fixed;
+    background-color: rgb(153, 193, 255);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    /* fallback */
+    width: 100%;
+    height: 100%;
+}
+
+.panel.hidden{
+    display: none;
+}
+
+#p-klassenkartedatensatz div.center-obj{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+
+    transform: translate(-50%, -50%);
+}
+
+#p-klassenkartedatensatz table{
+    background-color: white;
+    color: black;
+
+    border: 1px solid black;
+
+    border-collapse: collapse;
+    font-size: x-large;
+}
+
+#p-klassenkartedatensatz table tr th{
+    border-bottom: 1px solid black;
+    padding: 6px;
+    font-weight: normal;
+}
+
+#p-klassenkartedatensatz table input#klassenname{
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+#p-klassenkartedatensatz table input#klassenname:focus{
+    cursor: text;
+}
+
+#p-klassenkartedatensatz table th#attribute{
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+}
+
+#p-klassenkartedatensatz table th#attribute:focus{
+    cursor: text;
+}
+
+
+#p-klassenkartedatensatz table input#klassenname::selection,
+#p-klassenkartedatensatz table th#attribute::selection{
+    background-color: dodgerblue;
+    color: white;
+}
+
+#p-klassenkartedatensatz div.center-obj input#datensatz{
+    outline: none;
+
+    position: fixed;
+    left: -7%;
+    padding: 8px;
+    width: 110%;
+
+    font-family: inherit;
+    font-size: medium;
+}

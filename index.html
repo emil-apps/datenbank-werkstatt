@@ -1,0 +1,74 @@
+<!-- Datenbank-Werkstatt v1.0.0.0
+Kann für den Informatikunterricht genutzt werden
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenbank-Werkstatt</title>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="settings-container" class="hidden">
+        <div class="content">
+            <h2>Einstellungen</h2>
+            <p>Sprache: <select>
+                <option selected>Deutsch</option>
+            </select></p>
+
+            <h2>Danksagungen</h2>
+            <p>Symbole wurden bereitgestellt von <a href="http://www.icons8.com" target="_blank" title="Klicken, um Seite zu besuchen">Icons8 LLC</a>.</p>
+
+            <br>
+
+            <button id="settings-back-btn">Zur&uuml;ck</button>
+        </div>
+    </div>
+
+    <div id="menu">
+        <h1>Datenbank-Werkstatt</h1>
+        <div class="container">
+            <button class="menu-btn" id="klassenkarte-zu-datensatz">
+                <img src="tabelle.svg" />
+                <span>Klassenkarte &lt;=&gt; Datensatz</span>
+            </button>
+            <button class="menu-btn" id="sql-abfrage">
+                <img src="datenbank.svg" />
+                <span>SQL-Abfrage bauen</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="bar">
+        <span id="name"></span>
+        <img src="hauptmenu.svg" class="hidden" id="hauptmenu-btn" title="Hauptmen&uuml;" />
+        <img src="einstellungen.svg" id="einstellungen-btn" title="Einstellungen" />
+    </div>
+
+    <div class="panel hidden" id="p-klassenkartedatensatz">
+        <div class="center-obj">
+            <table>
+                <tr>
+                    <th>
+                        <input id="klassenname" spellcheck="false" title="Klassenname" placeholder="Kann nicht leer sein." value="person" />
+                    </th>
+                </tr>
+                <tr>
+                    <th contenteditable="true" spellcheck="false" id="attribute">name: TEXT<br>alter: INTEGER</th>
+                </tr>
+            </table>
+            <br><br>
+            <input type="text" id="datensatz" value="person(name:TEXT, alter:INTEGER)" />
+        </div>
+    </div>
+
+    <div class="panel hidden" id="p-sqlabfrage">
+        <div class="options">
+            <span>Tabellenname</span><br>
+            <input placeholder="Tabellenname(n)" value="" id="sql-table" />
+        </div>
+    </div>
+</body>
+</html>
